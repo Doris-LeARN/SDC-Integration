@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize-css/dist/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="materialize-css/extras/noUiSlider/nouislider.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body {
+            position: absolute;
+        }
+        
+        #img1,
+        .img {
+            width: 100%;
+        }
+        
+        .img {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+        
+        h7 {
+            font-weight: bold;
+        }
+        
+        .ligne2 h8,
+        .listselect p {
+            color: #BFBFC1;
+            font-size: smaller;
+        }
+        
+        .ligne1,
+        .ligne3 {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-img {
+            padding: 3.5%;
+        }
+        /*.parent {
+            position: relative;
+        }
+        
+        .overlay {
+            position: absolute;
+            left: 2%;
+        }*/
+        
+        .listselect {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-top: 0;
+        }
+        
+        .listselect select {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+        
+        .listselect select {
+            /*color: #BFBFC1;*/
+            font-size: 80%;
+        }
+        
+        #test-slider {
+            /*margin-top: 0.5rem;*/
+        }
+        
+        #test-slider p {
+            font-size: 80%;
+            color: black;
+        }
+        
+        .prix {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .prix h8 {
+            font-size: 0.70rem
+        }
+        
+        #idsection1 {
+            margin-bottom: 20;
+            padding-top: 0;
+            padding-bottom: 5%;
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+        
+        #idsection1 .listselect {
+            margin-top: 100%;
+        }
+        
+        #idliving {
+            /*border-bottom: 1px solid #000;*/
+        }
+        
+        .txte {
+            text-align: right;
+            display: flex;
+            margin-top: -50px;
+        }
+        
+        #logo-sajari {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 5px;
+            padding-right: 0px;
+            padding-top: 3px;
+        }
+        
+        #texte {
+            padding-right: 0;
+            margin-left: 0;
+        }
+        
+        .search-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #logo-sajari {
+            width: 14px;
+            height: 14px;
+            padding: 0;
+            margin-left: 15px;
+            margin-top: 6px;
+        }
+        
+        #search {
+            margin-bottom: 10px;
+        }
+        
+        header {
+            margin-bottom: 50px;
+        }
+        
+        #nav-mobile {
+            margin-left: 150px;
+        }
+        
+        #imgcart {
+            margin-top: 20px;
+        }
+        
+        nav div ul li a {
+            color: #131313;
+        }
+        
+        #idheader nav {
+            -webkit-text-size-adjust: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            box-sizing: inherit;
+            display: block;
+            color: #131313;
+            background-color: transparent;
+            width: 100%;
+            line-height: 64px;
+            height: auto;
+            box-shadow: transparent !important;
+        }
+        
+        #idheader nav {
+            -webkit-text-size-adjust: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            box-sizing: inherit;
+            display: block;
+            color: #131313;
+            background-color: transparent;
+            width: 100%;
+            line-height: 64px;
+            height: auto;
+            box-shadow: transparent !important;
+        }
+        
+        #idheader nav .nav-wrapper {
+            -webkit-text-size-adjust: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #131313 line-height: 64px;
+            box-sizing: inherit;
+            position: relative;
+            height: auto;
+            min-height: 64px;
+        }
+        
+        i.icon-black {
+            color: #131313;
+        }
+        
+        #idsection1 input {
+            color: #131313;
+        }
+        
+        #idsection1 input::placeholder {
+            color: red !important;
+        }
+        
+        .small1 {
+            font-weight: bold;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            #section3 {
+                display: none;
+            }
+            #logo-sajari {
+                width: 14px;
+                height: 14px;
+                padding: 0;
+                margin-left: 15px;
+                margin-top: 6px;
+            }
+            .txte {
+                text-align: right;
+                display: flex;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header id="idheader">
+            <nav class="nav-extended">
+                <div class="nav-wrapper">
+                    <a href="#" class="left brand-logo"><img src="img/icon/Logo.png" alt="Logo"></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">SHOP</a></li>
+                        <li><a href="#">MAGAZINE</a></li>
+                    </ul>
+                    <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="icon-black material-icons">menu</i></a>
+                    <ul class="right">
+                        <li>
+                            <a href="sass.html"><img id="imgcart" src="img/icon/Cart_Button.png" class="responsive-img left"></a>
+                        </li>
+                        <li class="hide-on-med-and-down">
+                            <a href="#">Login</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">MAGAZINE</a></li>
+            </ul>
+
+        </header>
+
+        <main>
+            <div style="idsection1" class="section1">
+                <div class="row">
+                    <div class="living col s12 m9">
+                        <div class="search-wrapper">
+                            <i class="medium material-icons left">search</i><input id="search" placeholder="living room">
+                            <div class="search-results"></div>
+                        </div>
+                        <div class="txte row">
+                            <div id="texte" class="col s11">
+                                <small>Powered by</small> <small class="small1">Algolia</small>
+                            </div>
+                            <div id="logo-sajari" class="col s1">
+                                <img id="logo-img" class="responsive-img" src="img/icon/Sajari_Logo.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listselect s12 m3">
+                        <div class="img">
+                            <select class="browser-default">
+                                <option value="1">Best Match</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row ">
+                    <div class="col s12 l3 m6 listselect">
+                        <small>FILTER BY</small>
+                        <select class="browser-default">
+                            <option value="1">Collection</option>
+                        </select>
+                        <select class="browser-default">
+                            <option value="1">Color</option>
+                        </select>
+                        <select class="browser-default">
+                            <option value="1">Category</option>
+                        </select>
+
+                        <div class="hide-on-med-and-down" id="test-slider">
+                            <p>Price Range</p>
+                            <div id="range-input" class="noUi-target noUi-ltr noUi-horizontal">
+                                <div class="noUi-base">
+                                    <div class="noUi-origin" style="left: 0%;">
+                                        <div class="noUi-handle noUi-handle-lower" data-handle="0" style="z-index: 5;">
+                                            <div class="noUi-handle-touch-area"></div>
+                                            <div class="noUi-tooltip"><span>0</span></div>
+                                        </div>
+                                    </div>
+                                    <div id="rangeline" class="noUi-connect" style="left: 0%; right: 0%;"></div>
+                                    <div class="noUi-origin" style="left: 100%;">
+                                        <div class="noUi-handle noUi-handle-upper" data-handle="1" style="z-index: 4;">
+                                            <div class="noUi-handle-touch-area"></div>
+                                            <div class="noUi-tooltip"><span>100</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="prix">
+                                <h8>$0</h8>
+                                <h8>$10,000+</h8>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/living-room-g21f7797af_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Coombes</h7>
+                                        <h8>$2.600</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>LOUNGE</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/brick-wall-g7c76e9f33_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Keeves Set</h7>
+                                        <h8>$590</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>TABLE & CHAIRS</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/cafe-g15ced43b8_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Nillè</h7>
+                                        <h8>$950</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>ARMCHAIR</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section3">
+                <div class="row">
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/workplace-g45d76b3c8_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Blanko</h7>
+                                        <h8>$90</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>SIDE TABLE</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/couch-ge0bbfe707_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Momo</h7>
+                                        <h8>$890</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>SHELVES</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/chairs-gebc018e6b_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Penemillè</h7>
+                                        <h8>$120</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>CHAIR</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l3 m6">
+                        <div class="row">
+                            <div class="img">
+                                <img id="img1" src="img/bedroom-gbbb3c9f4e_1280.jpg" alt="room_1" class="responsive-image">
+                                <div class="footer-img">
+                                    <div class="ligne1">
+                                        <h7>Kappu</h7>
+                                        <h8>$420</h8>
+                                    </div>
+                                    <div class="ligne2">
+                                        <h8>SHELVES</h8>
+                                    </div>
+                                    <div class="ligne3">
+                                        <div>
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star_On.png" alt="star on">
+                                            <img src="img/icon/Star.png" alt="star">
+                                        </div>
+                                        <div>
+                                            <img class="parent" src="img/icon/Cart_Button.png" alt="">
+                                            <!--<img class="overlay" src="img/icon/Star_On.png" alt="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-copyright">
+                <!--<div class="container">-->
+                <div class="row">
+                    <div class="col l8 s12">
+                        <ul class="pagination">
+                            <li class="col l1 s2 active black"><a href="#!">1</a></li>
+                            <li class="col l1 s2 waves-effect"><a href="#!">2</a></li>
+                            <li class="col l1 s2 waves-effect"><a href="#!">3</a></li>
+                            <li class="col l1 s2"><a href="#!">4</a></li>
+                            <li class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">5</a></li>
+                            <li class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">6</a></li>
+                            <li class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">7</a></li>
+                            <li class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">8</a></li>
+                            <li class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">9</a></li>
+                            <li style="text-align:center;" class="col l1 s2 waves-effect hide-on-med-and-down"><a href="#!">10</a></li>
+                            <li class="col l2 s2 waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+        </footer>
+    </div>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize-css/extras/noUiSlider/nouislider.min.js"></script>
+    <script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
+</body>
+
+</html>
